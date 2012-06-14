@@ -1,0 +1,60 @@
+<% if signed_in? %>
+
+<div id="content">
+<div id="content" class="int">
+  <div summary="Para usuarios conectados" class="home">
+
+        <h1 class="title">¿Que hay de nuevo?
+        <%= render 'shared/micropost_form' %>
+        </h1> 
+        <%= render 'shared/feed' %>
+      
+  </div>
+  <div style="clear: both;">&nbsp;</div>
+</div>
+</div>
+<div id="side">
+<div id="sidebar">
+  <div id="sidebar" class="int">
+      <%= render 'shared/user_info' %>
+  </div>
+</div>
+
+      <%= render 'shared/stats' %>
+
+<div id="sidebar">
+  <div id="sidebar" class="int">
+    <%= render 'shared/search' %>
+  </div>
+</div>
+</div>
+
+
+<% else %>
+
+  <div id="home">
+    <div class="text">
+      <h1>Bienvenidos a Micropost</h1>
+      <p>
+        Únete a la comunidad de 
+        <a href="#">Micropost</a>
+        y comparte con tus amigos lo que quieras.
+      </p>
+      <table class="tabla">
+        <tr>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>     
+            <%= link_to "Únete ahora!", signup_path, :class => "signup_button round" %>
+          </td>     
+          <td>
+            <%= link_to "Iniciar sesión", signin_path, :class => "signup_button round" %>
+          </td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+          <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+        </tr>
+      </table>    
+    </div>
+  </div>
+
+<% end %>

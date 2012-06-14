@@ -1,0 +1,9 @@
+require 'spec_helper'
+
+#   describe "UserMailer" do
+#     it "should be able to ask for a new password" do
+#       newpass = 123456
+#       user = User.authenticate_by_email("bar@foo.com")
+#       UserMailer.new_password(user,newpass)
+#     end
+  end

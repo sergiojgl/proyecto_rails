@@ -1,0 +1,25 @@
+<div id="follow">
+  <div id="follow" class="int">
+    <div class="main">
+      <h1><%= @title %></h1>
+
+      <% unless @users.empty? %>
+        <ul class="users">
+          <%= render @users %>
+        </ul>
+        <div id="pagination"><%= will_paginate @users, :previous_label => "Anterior", :next_label => "Siguiente", :id => "pages", :separator => "&nbsp&nbsp" %></div>
+      <% end %>
+     </div>
+   </div>
+</div>
+
+<div id="side">
+<div id="sidebar">
+  <div id="sidebar" class="int">
+      <%= render 'shared/user_info' %>
+  </div>
+</div>
+
+      <%= render 'shared/stats' %>
+
+</div>

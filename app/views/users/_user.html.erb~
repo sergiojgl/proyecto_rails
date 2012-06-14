@@ -1,0 +1,17 @@
+<% if !user.admin? %>
+<li class="usuario" id="user_<%= user.name.downcase %>">
+  <table>
+    <tbody>
+      <tr>
+        <td><%= gravatar_for user, :size => 30 %></td>
+        <td><%= link_to user.name, user %></td>
+	<% if current_user.admin? %>
+	<td class="delete"><td><%= link_to "Eliminar", user, :class => :delete, :method => :delete, :confirm => "¿Estás seguro?",
+                                :title => "Borrar #{user.name}" %></td>
+        </td>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>
+</li>
+<% end %>

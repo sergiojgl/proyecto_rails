@@ -1,0 +1,31 @@
+<div id="user">
+<div id="user" class="int">
+
+<h1>Todos los usuarios</h1>
+<br></br>
+<form action="">
+<input type="text" id="nombre">
+<input type="button" onClick="buscar(document.getElementById('nombre').value);" value="Buscar"/>
+</form>
+
+<div id="pagination" style="padding-top: 20px;"><%= will_paginate :previous_label => "Anterior", :next_label => "Siguiente", :id => "pages", :separator => "&nbsp&nbsp" %></div>
+
+<ul class="users">
+  <%= render @users %>
+</ul>
+
+<div id="pagination"><%= will_paginate :previous_label => "Anterior", :next_label => "Siguiente", :id => "pages", :separator => "&nbsp&nbsp" %></div>
+
+</div>
+</div>
+
+<div id="side">
+<div id="sidebar">
+  <div id="sidebar" class="int">
+      <%= render 'shared/user_info' %>
+  </div>
+</div>
+
+      <%= render 'shared/stats' %>
+
+</div>

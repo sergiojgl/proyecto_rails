@@ -1,0 +1,42 @@
+<div id="edit">
+  <div id="edit" class="int">
+
+<h1>Editar usuario</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmacion" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="field" >
+    <%= f.label :color, "Color del perfil personalizado" %><br />
+    <br><input id="user_color" name="user[color]" type="radio" value="red"/>
+    <%= f.label :color, "Rojo" %><%= render 'shared/paleta', :color => "red" %><br />
+    <br><input id="user_color" name="user[color]" type="radio" value="blue" checked="true" />
+    <%= f.label :color, "Azul" %><%= render 'shared/paleta', :color => "blue" %><br />
+    <br><input id="user_color" name="user[color]" type="radio" value="green"/>
+    <%= f.label :color, "Verde" %><%= render 'shared/paleta', :color => "green" %><br />
+    <br><input id="user_color" name="user[color]" type="radio" value="yellow"/>
+    <%= f.label :color, "Amarillo" %><%= render 'shared/paleta', :color => "yellow" %><br />
+    <br><input name="user[notification]" type="hidden" value="0" /><input id="user_notification" name="user[notification]" type="checkbox" value="1" <%=  notification(@user)%>/>
+    <%= f.label :notification, "Recibir notificaiones por correo" %><br />
+  </div>  
+  <div class="actions">
+    <%= f.submit "Actualizar" %>
+  </div>
+<% end %>
+</div>
+</div>
